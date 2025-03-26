@@ -22,4 +22,10 @@ model.fit(featuers, cat_train)
 
 #test our model
 featuers_test = cv.transform(mess_test)
-print(model.score(featuers_test, cat_test))
+
+#predict the Data
+def predict(message):
+    input_message = cv.transform(['Congratulations, you won a lottery']).toarray()
+    result = model.predict(message)
+    return result
+
