@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB                       
+import streamlit as st
 
 data = pd.read_csv("D:\CV Projects\Email-Spam-Detection\spam.csv")
 
@@ -22,10 +23,13 @@ model.fit(featuers, cat_train)
 
 #test our model
 featuers_test = cv.transform(mess_test)
+print(model.score(featuers_test, cat_test))
 
 #predict the Data
 def predict(message):
-    input_message = cv.transform(['Congratulations, you won a lottery']).toarray()
-    result = model.predict(message)
+    input_message = cv.transform([message]).toarray()
+    result = model.predict(input_message)
     return result
-
+st.header('Spam Detection')
+output = predict('Congratulations, you won a lottery')
+print(output)
