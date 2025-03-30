@@ -22,17 +22,17 @@ model = MultinomialNB()
 model.fit(featuers, cat_train)
 
 #test our model
-featuers_test = cv.transform(mess_test)
-print(model.score(featuers_test, cat_test))
+features_test = cv.transform(mess_test)
+print(model.score(features_test, cat_test))
 
 #predict the Data
 def predict(message):
     input_message = cv.transform([message]).toarray()
     result = model.predict(input_message)
     return result
-st.header('Spam Detection')
+st.header('Spam Detection App')
 output = predict('Congratulations, you won a lottery')
-input_mess = st.text_input('Enter Message Here')
+input_mess = st.text_input("Enter Message Here","")
 
 if st.button('Validate'):
     output = predict(input_mess)
