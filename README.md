@@ -1,4 +1,4 @@
-# 📧 Spam Detection App
+# 📧 Email Spam Detection App
 
 A **machine learning web app** built with **Streamlit** that classifies text messages as **Spam** or **Not Spam** using a **Naive Bayes classifier** trained on SMS data. It uses the **Bag of Words model** for text vectorization with `CountVectorizer`.
 
