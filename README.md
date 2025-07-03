@@ -57,7 +57,7 @@ cd spam-detection-app
 ```bash
 pip install -r requirements.txt
 ```
-### 🔸 3. Run the Streamlit app
+### 🔸 3. Run the Streamlit app in VS Code
 ```bash
 streamlit run app.py
 ```
